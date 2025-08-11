@@ -21,16 +21,21 @@
     "typeorm": "typeorm-ts-node-commonjs -d ./src/config/database/data-source.ts"
   },
   "dependencies": {
+    "@nestjs/cache-manager": "^3.0.1",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.0",
+    "@types/xxhashjs": "^0.2.4",
+    "cache-manager": "^7.1.1",
+    "ioredis": "^5.7.0",
     "joi": "^17.13.3",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.25"
+    "typeorm": "^0.3.25",
+    "xxhashjs": "^0.2.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
