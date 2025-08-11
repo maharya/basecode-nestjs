@@ -1,5 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as process from 'node:process';
+import { join } from 'path';
 import { DatabaseType, DataSourceOptions } from 'typeorm';
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
@@ -54,8 +55,8 @@ function postgresConfigMapping(dbConfig: DBConfig): PostgresConnectionOptions {
     },
     logging: true,
     synchronize: false,
-    entities: ['./src/modules/**/models/*.ts'],
-    migrations: ['./src/modules/**/migrations/*.ts'],
+    entities: [join(__dirname, '../../modules/**/models/*{.ts,.js}')],
+    migrations: [join(__dirname, '../../modules/**/migrations/*{.ts,.js}')],
   };
 }
 function mysqlConfigMapping(dbConfig: DBConfig): MysqlConnectionOptions {
@@ -81,8 +82,8 @@ function mysqlConfigMapping(dbConfig: DBConfig): MysqlConnectionOptions {
     },
     logging: true,
     synchronize: false,
-    entities: ['./src/modules/**/models/*.ts'],
-    migrations: ['./src/modules/**/migrations/*.ts'],
+    entities: [join(__dirname, '../../modules/**/models/*{.ts,.js}')],
+    migrations: [join(__dirname, '../../modules/**/migrations/*{.ts,.js}')],
   };
 }
 

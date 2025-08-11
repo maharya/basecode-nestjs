@@ -12,6 +12,7 @@ import schema from './schema';
       validationSchema: schema,
     }),
     TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
       useClass: TypeOrmConfigService,
     }),
   ],
